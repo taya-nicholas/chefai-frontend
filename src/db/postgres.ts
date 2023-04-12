@@ -4,7 +4,8 @@ import {
   PG_DATABASE,
   PG_PASSWORD,
 } from "$env/static/private";
-import { Pool } from "pg";
+import pkg from "pg";
+const { Pool } = pkg;
 
 const pool = new Pool({
   user: PG_USER,
