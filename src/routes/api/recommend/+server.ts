@@ -1,4 +1,5 @@
-import { Lambda } from "aws-sdk";
+import pkg from "aws-sdk";
+const { Lambda } = pkg;
 import type { RequestHandler } from "@sveltejs/kit";
 
 export const POST: RequestHandler = async ({ request }) => {
