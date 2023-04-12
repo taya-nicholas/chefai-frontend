@@ -27,12 +27,14 @@
     class="absolute top-0 left-0 bg-gradient-to-b from-pale-yellow to-transparent h-96 w-full z-0"
   />
   <main class="max-w-screen-xl mx-auto overflow-hidden relative z-1 w-full">
-    <h1 class="text-3xl text-zinc-800 font-medium pt-8 md:text-4xl lg:text-5xl">
+    <h1
+      class="text-3xl text-zinc-800 font-medium pt-8 md:text-4xl lg:text-5xl ml-2"
+    >
       Recipes
     </h1>
 
     <p
-      class="text-base font-normal my-5 text-zinc-700 max-w-3xl pb-3 md:text-md lg:text-lg"
+      class="text-base font-normal my-5 text-zinc-700 max-w-3xl pb-3 md:text-md lg:text-lg ml-2"
     >
       Discover a world of flavor with our recipe library. Whether you're looking
       for classic comfort food or something new and exciting, you're sure to

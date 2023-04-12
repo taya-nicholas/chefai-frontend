@@ -33,12 +33,12 @@
   />
   <div class="max-w-screen-xl mx-auto overflow-hidden z-1 relative">
     <h1
-      class="text-3xl text-zinc-800 font-medium m-1 pt-8 md:text-4xl lg:text-5xl"
+      class="text-3xl text-zinc-800 font-medium m-1 pt-8 md:text-4xl lg:text-5xl ml-2"
     >
       Cart
     </h1>
     <p
-      class="text-base font-normal m-1 my-5 text-zinc-700 max-w-3xl pb-3 md:text-md lg:text-lg"
+      class="text-base font-normal m-1 my-5 text-zinc-700 max-w-3xl pb-3 md:text-md lg:text-lg ml-2"
     >
       Your selected recipes are safely stored in your cart for easy access
       whenever you need them. You can modify them individually, or use the

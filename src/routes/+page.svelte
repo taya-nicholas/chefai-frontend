@@ -22,10 +22,10 @@
       />
     </div>
     <div
-      class="col-span-1 min-h-full mb-5 text-left pl-10 pt-12 pr-24 lg:p-12 xl:pl-16 xl:pt-20 xl:pr-24 bg-pale-yellow border border-1 border-r-sky-900 border-b-sky-900 border-l-sky-900 overflow-auto"
+      class="col-span-1 min-h-full mb-5 text-left pl-5 pt-5 pr-5 lg:p-12 xl:pl-16 xl:pt-20 xl:pr-24 bg-gradient-to-b from-pale-yellow to-white border border-1 border-r-sky-900 border-b-sky-900 border-l-sky-900 overflow-auto"
     >
       <h1
-        class="title text-3xl pb-5 font-medium text-zinc-900 sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl"
+        class="title text-3xl pb-5 font-semibold text-zinc-900 sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl"
       >
         The begginings of recipe automation
       </h1>
