@@ -82,7 +82,7 @@
       </h1>
 
       <p
-        class="text-base font-normal m-1 my-5 text-zinc-700 max-w-3xl pb-3 md:text-md lg:text-lg"
+        class="text-base font-normal m-2 my-5 text-zinc-700 max-w-3xl pb-3 md:text-md lg:text-lg"
       >
         Our Recommendations machine simplifies meal planning by generating a
         wide range of diverse and delicious recipes. You no longer have to worry
@@ -93,10 +93,10 @@
 
       <div class="flex flex-row space-x-5 max-w-2xl">
         <button
-          class="btn bg-aqua text-slate-800 hover:bg-yellow-300 btn-lg ml-2"
+          class="btn bg-aqua text-slate-800 hover:bg-yellow-300 btn-md ml-2 md:btn-lg"
           on:click={handleClick}>Generate {num_recipes}</button
         >
-        <div class="w-screen">
+        <div class="md:w-screen">
           <p class="pb-1 text-center italic text-gray-400">
             Select number of recipes to generate
           </p>
@@ -119,9 +119,13 @@
         </div>
       </div>
       {#await promise}
-        <p class="pt-10">Generating...</p>
+        <p class="pt-10 ml-2">Generating...</p>
       {:then recipes}
         {#if recipes}
+          <button
+            on:click={addAllToCart}
+            class="btn btn-md btn-accent mt-5 ml-2">Add all to cart</button
+          >
           <div
             class="grid grid-cols-2 grid-flow-row pt-10 md:grid-cols-3 lg:grid-cols-4"
           >
@@ -152,13 +156,15 @@
                     class="object-contain w-full"
                     width={310}
                     height={310}
-                    eager={false}
+                    eager={true}
                     src={recipe.image_url}
                     alt="recipe image of {recipe.name}"
                   />
                   <div class="h-20 flex flex-col justify-between">
                     <div class="flex flex-row justify-between items-center">
-                      <p class="mt-3 mb-2 font-semibold text-gray-800 text-lg">
+                      <p
+                        class="mt-3 mb-2 font-semibold text-gray-800 text-md h-12 overflow-clip lg:text-lg lg:h-16"
+                      >
                         {recipe.name}
                       </p>
                     </div>
@@ -167,9 +173,6 @@
               </div>
             {/each}
           </div>
-          <button on:click={addAllToCart} class="btn btn-md btn-accent m-5"
-            >Add all to cart</button
-          >
         {/if}
       {:catch error}
         <p>{error.message}</p>

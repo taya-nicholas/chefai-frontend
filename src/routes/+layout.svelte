@@ -4,7 +4,7 @@
 
 <body class="bg-white min-h-screen">
   <header
-    class="navbar bg-white outline outline-sky-900 outline-1 fixed w-screen z-20 top-0"
+    class="navbar bg-white outline outline-sky-900 outline-1 fixed w-full z-20 top-0"
   >
     <div class="navbar-start p-1 flex ml-auto">
       <div class="dropdown">
@@ -64,7 +64,7 @@
     <div class="navbar-end" />
   </header>
 
-  <div class="relative top-16 bg-white min-h-max">
+  <div class="relative top-16 bg-white min-h-max w-full">
     <slot />
   </div>
 </body>

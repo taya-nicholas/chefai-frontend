@@ -128,7 +128,9 @@
             />
             <div class="h-20 flex flex-col justify-between">
               <div class="flex flex-row justify-between items-center">
-                <p class="mt-3 mb-2 font-semibold text-gray-800 text-lg">
+                <p
+                  class="mt-3 mb-2 font-semibold text-gray-800 text-md h-12 overflow-clip lg:text-lg lg:h-16"
+                >
                   {recipe.name}
                 </p>
               </div>

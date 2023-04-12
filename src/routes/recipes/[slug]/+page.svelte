@@ -40,7 +40,7 @@
   }
 </script>
 
-<div class="bg-white min-h-screen pb-32">
+<div class="bg-white min-h-screen pb-32 w-full">
   <front
     class="text-center flex flex-col justify-center min-h-full items-center"
   >
@@ -51,10 +51,10 @@
         class="flex flex-col justify-center items-center dborder border-1 border-l-sky-900 border-b-sky-900 border-r-sky-900"
       >
         <div>
-          <div class="flex space-x-3 text-center justify-center">
+          <div class="flex space-x-3 text-center justify-center overflow-auto">
             {#each tags as tag}
               <p
-                class="bg-aqua text-gray-700 px-1 text-lg hover:bg-yellow-300 hover:cursor-pointer"
+                class="bg-aqua text-gray-700 px-1 text-sm md:text-md lg:text-lg hover:bg-yellow-300 hover:cursor-pointer"
               >
                 {tag.tag_name}
               </p>

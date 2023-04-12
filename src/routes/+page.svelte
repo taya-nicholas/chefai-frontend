@@ -16,8 +16,8 @@
         width={1000}
         height={1000}
         quality={100}
-        eager={false}
-        src="https://chefai.s3.ap-southeast-2.amazonaws.com/images/robot-hd.png"
+        eager={true}
+        src="https://chefai.s3.ap-southeast-2.amazonaws.com/images/robot.png"
         alt="Robot chef making dinner"
       />
     </div>
@@ -60,6 +60,7 @@
                 class=""
                 width={300}
                 quality={70}
+                eager={true}
                 src={recipe.image_url}
                 alt={recipe.name}
               />
