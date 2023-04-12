@@ -1,6 +1,7 @@
 import pkg from "aws-sdk";
 const { Lambda } = pkg;
 import type { RequestHandler } from "@sveltejs/kit";
+import { AWS_AK, AWS_SAK } from "$env/static/private";
 
 export const POST: RequestHandler = async ({ request }) => {
   try {
@@ -13,7 +14,11 @@ export const POST: RequestHandler = async ({ request }) => {
       });
     }
 
-    const lambda = new Lambda({ region: "ap-southeast-2" });
+    const lambda = new Lambda({
+      region: "ap-southeast-2",
+      accessKeyId: AWS_AK,
+      secretAccessKey: AWS_SAK,
+    });
 
     const params = {
       FunctionName: "recommendRecipes",
