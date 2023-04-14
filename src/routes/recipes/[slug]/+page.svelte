@@ -84,7 +84,7 @@
 
       <div class="flex justify-center items-center">
         <Image
-          class=""
+          class="object-cover"
           width={800}
           height={800}
           quality={100}

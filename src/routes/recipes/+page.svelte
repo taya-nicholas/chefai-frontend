@@ -2,10 +2,37 @@
   import type { PageData } from "./$types";
   import Image from "sveltekit-image";
   import { cart } from "../../cart";
+  import { onMount } from "svelte";
+  import InfiniteLoading from "svelte-infinite-loading";
 
-  export let data: PageData;
-  $: recipes = data.recipes;
+  // export let data: PageData;
+  // $: recipes = data.recipes;
   let cart_arr: number[] = Array.from($cart);
+
+  let page = 0;
+  let recipes: any[] = [];
+
+  function infiniteHandler({ detail: { loaded, complete } }) {
+    fetch("/api/recipes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        page: page,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message.length) {
+          page += 1;
+          recipes = [...recipes, ...data.message];
+          loaded();
+        } else {
+          complete();
+        }
+      });
+  }
 
   function updateCart(id: number) {
     let items = $cart;
@@ -120,9 +147,7 @@
             href="/recipes/{recipe.url_name}"
           >
             <Image
-              class="object-contain w-full"
-              width={310}
-              height={310}
+              class="h-72 w-72 object-cover"
               quality={45}
               eager={false}
               src={recipe.image_url}
@@ -140,6 +165,7 @@
           </a>
         </div>
       {/each}
+      <InfiniteLoading on:infinite={infiniteHandler} />
     </div>
   </main>
 </div>

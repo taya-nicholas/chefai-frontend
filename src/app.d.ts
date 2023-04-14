@@ -2,19 +2,19 @@
 // for information about these interfaces
 // and what to do when importing types
 declare global {
-	namespace App {
-		// interface Error {}
-		// interface Locals {}
-		// interface PageData {}
-		// interface Platform {}
-	}
+  namespace App {
+    // interface Error {}
+    // interface Locals {}
+    // interface PageData {}
+    // interface Platform {}
+  }
 }
 
 declare class Recipe {
-	id: string;
-	name: string;
-	description: string;
-	url: String
+  id: string;
+  name: string;
+  description: string;
+  url: String;
 }
 
 export {};

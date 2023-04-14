@@ -76,7 +76,7 @@
             href="/recipes/{recipe.url_name}"
           >
             <img
-              class="object-contain w-full"
+              class="object-cover h-72 w-72"
               src={recipe.image_url}
               alt="recipe image of {recipe.name}"
             />

@@ -34,7 +34,7 @@
     const res = await req.json();
     if (res.statusCode === 200) {
       inds = res.body;
-      const req_rec = await fetch("/api/recipes", {
+      const req_rec = await fetch("/api/recipe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -153,7 +153,7 @@
                   href="/recipes/{recipe.url_name}"
                 >
                   <Image
-                    class="object-contain w-full"
+                    class="object-cover w-72 h-72"
                     width={310}
                     height={310}
                     eager={true}
