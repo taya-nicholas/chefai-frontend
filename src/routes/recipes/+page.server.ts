@@ -3,7 +3,7 @@ import { pool } from "$db/postgres";
 
 export const config = {
   isr: {
-    expiration: 600,
+    expiration: 60,
   },
 };
 export const load = (async ({ params }) => {

@@ -1,6 +1,12 @@
 import type { PageServerLoad } from "./$types";
 import { pool } from "$db/postgres";
 
+export const config = {
+  isr: {
+    expiration: 60,
+  },
+};
+
 export const load = (async ({ params }) => {
   const recipe_query = await pool.query(
     `

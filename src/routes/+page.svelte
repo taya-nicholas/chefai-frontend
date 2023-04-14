@@ -57,8 +57,9 @@
           <div class="carousel-item h-96 w-72">
             <a class="" href="recipes/{recipe.url_name}">
               <Image
-                class=""
+                class="h-72"
                 width={300}
+                height={300}
                 quality={70}
                 eager={true}
                 src={recipe.image_url}
