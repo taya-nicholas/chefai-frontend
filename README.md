@@ -1,38 +1,22 @@
-# create-svelte
+ChefAI is a free and open-source project that uses modern machine learning, MLOps, and data engineering practices to automate meal planning and cooking. You can check out the live website at [chefai.dev](https://chefai.dev).
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+# About
+The project's backend is written in Python and creates a data pipeline that scrapes recipes, applies ML technologies such as ChatGPT and Stable Diffusion to transform them, and then uploads them to an SQL database on AWS. The pipeline is orchestrated using Airflow, enabling scheduled scraping of new data and task retrying for unavailable API requests.
 
-## Creating a project
+The frontend, created with SvelteKit, connects to AWS RDS and S3 to serve the data in a responsive UI styled with Tailwind CSS. The recommendations section uses an AWS Lambda function to make an API call. The website also leverages local storage to keep track of saved items in the cart.
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+# Running
+To run ChefAI, first clone the repository, then install the dependencies, and finally run the application using npm:
 
 ```bash
+git clone https://github.com/taya-nicholas/chefai-frontend.git
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
+Note that the website relies on external data and functions, so you must first produce this using the backend code and then add your AWS credentials to a .env file in the root folder.
 
-## Building
+# Future
+Release 1.0 is just the beginning of the project, and in the future, the goal is to connect it to an online supermarket to pull food availability and prices. This would allow the recommender to generate plans for specific price ranges or diets. There are many other potential improvements that could be made, so if you have any ideas, please share them by creating a Github issue.
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+# Acknowledgments
+The image generation in ChefAI is made possible thanks to StableHorde: https://github.com/db0/AI-Horde.
