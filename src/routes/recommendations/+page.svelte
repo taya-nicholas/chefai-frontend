@@ -1,12 +1,16 @@
 <script lang="ts">
   import Image from "sveltekit-image";
   import { cart } from "../../cart";
-  let cart_arr: number[] = Array.from($cart);
+  let cart_arr: any = $cart;
+
+  if (typeof cart_arr === "string") {
+    cart_arr = cart_arr.split(",").map(Number);
+  }
   let inds: Array<number> = [];
   let num_recipes = 3;
 
   function updateCart(id: number) {
-    let items = $cart;
+    let items = cart_arr;
     const index = items.indexOf(id);
 
     if (index === -1) {

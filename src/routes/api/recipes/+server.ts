@@ -11,7 +11,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
     const recipe_query = await pool.query(
       `
-        SELECT *
+        SELECT name, id, url_name, description, image_url, created_at
         FROM recipe
         ORDER by id ASC
         OFFSET $1

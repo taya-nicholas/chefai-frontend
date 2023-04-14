@@ -7,8 +7,14 @@ export const config = {
   },
 };
 
-export const load = (async ({ params }) => {
-  const recipes = await pool.query("SELECT * FROM recipe");
+export const load = (async ({ cookies }) => {
+  let cart_arr: any = cookies.get("cart");
+  if (typeof cart_arr === "string") {
+    cart_arr = cart_arr.split(",").map(Number);
+  }
+  const recipes = await pool.query(
+    `SELECT * FROM recipe WHERE ID IN (${cart_arr.join(",")})`
+  );
 
   return { recipes: recipes.rows };
 }) satisfies PageServerLoad;

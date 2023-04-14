@@ -4,7 +4,12 @@
 
   import { cart } from "../../../cart";
 
-  let cart_arr: number[] = Array.from($cart);
+  let cart_arr: any = $cart;
+
+  if (typeof cart_arr === "string") {
+    cart_arr = cart_arr.split(",").map(Number);
+  }
+
 
   export let data: PageData;
   $: recipe = data.recipe;
@@ -26,7 +31,7 @@
   }
 
   function updateCart(id: number) {
-    let items = $cart;
+    let items = cart_arr;
     const index = items.indexOf(id);
 
     if (index === -1) {
@@ -70,14 +75,14 @@
           </p>
           <p class="text-gray-700 m-10 text-xl italic">{recipe.description}</p>
           <button
-            class="btn btn-md lg:btn-lg mb-3 btn-ghost {cart_arr.includes(
+            class="btn btn-md lg:btn-lg mb-3 btn-ghost {( cart_arr && cart_arr.includes(
               recipe.id
             )
               ? 'bg-yellow-300 hover:bg-aqua'
-              : 'bg-aqua hover:bg-yellow-300'} outline outline-1 outline-black text-slate-800"
+              : 'bg-aqua hover:bg-yellow-300')} outline outline-1 outline-black text-slate-800"
             on:click={() => updateCart(recipe.id)}
           >
-            {cart_arr.includes(recipe.id) ? "Remove from cart" : "Add to cart"}
+            {( cart_arr && cart_arr.includes(recipe.id) ? "Remove from cart" : "Add to cart")}
           </button>
         </div>
       </div>

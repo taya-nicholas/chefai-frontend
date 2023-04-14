@@ -1,26 +1,16 @@
-// import { browser } from '$app/environment';
-// import { writable, get } from 'svelte/store';
-
-// export const cartItems = writable<Number[]>((browser && JSON.parse(localStorage.getItem("cartItems"))) || [1, 2, 4]);
-
-// export const addToCart = (id: number) => {
-//     let items = get(cartItems);
-//     const index = items.indexOf(id);
-
-//     if (index === -1) {
-//         items.push(id);
-//     } else {
-//         items.splice(index, 1);
-//     }
-
-//     cartItems.set(items);
-// }
-
 import { writable } from "svelte/store";
 import { browser } from "$app/environment";
+import Cookies from "js-cookie";
 
-// array
-// @ts-ignore
-const cartItems = JSON.parse(browser && localStorage.getItem("cart")) || [];
+// // array
+// // @ts-ignore
+// const cartItems = JSON.parse(browser && localStorage.getItem("cart")) || [];
+// export const cart = writable(browser && cartItems);
+// cart.subscribe((val) => browser && (localStorage.cart = JSON.stringify(val)));
+
+const cartItems = (browser && Cookies.get("cart")) || [];
 export const cart = writable(browser && cartItems);
-cart.subscribe((val) => browser && (localStorage.cart = JSON.stringify(val)));
+// cart.subscribe((val) => Cookies.set("cart", val));
+cart.subscribe(
+  (val) => browser && (Cookies.set("cart", val), { expires: 14, path: "" })
+);
