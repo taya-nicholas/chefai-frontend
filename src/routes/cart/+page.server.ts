@@ -1,11 +1,6 @@
 import type { PageServerLoad } from "./$types";
 import { pool } from "$db/postgres";
 
-export const config = {
-  isr: {
-    expiration: 600,
-  },
-};
 
 export const load = (async ({ cookies }) => {
   let cart_arr: any = cookies.get("cart");

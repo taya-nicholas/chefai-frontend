@@ -48,7 +48,6 @@
         }),
       });
       let res_rec = await req_rec.json();
-      console.log(res_rec);
       if (res_rec.message) {
         return res_rec.message;
       }
