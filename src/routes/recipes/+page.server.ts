@@ -8,7 +8,9 @@ export const config = {
 };
 export const load = (async ({ params }) => {
   // Select all recipes
-  const recipes = await pool.query("SELECT * FROM recipe");
+  const recipes = await pool.query(
+    "SELECT * FROM recipe ORDER BY id ASC LIMIT 20"
+  );
 
   // Iterate over each recipe and get its ingredients
   for (const recipe of recipes.rows) {
