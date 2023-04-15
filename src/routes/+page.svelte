@@ -35,7 +35,15 @@
         Welcome to ChefAI, the future of effortless meal planning and
         preparation! We are a cutting-edge website that harnesses the power of
         AI and automation to simplify your cooking experience and save you
-        valuable time in the kitchen.
+        valuable time in the kitchen. All code is free and open source. Refer to
+        the GitHub repo below.
+
+        <a href="https://github.com/taya-nicholas/chefai-backend">
+          <img
+            alt="GitHub release (latest by date)"
+            src="https://img.shields.io/github/v/release/taya-nicholas/chefai-backend?style=social"
+          />
+        </a>
       </p>
     </div>
   </div>
