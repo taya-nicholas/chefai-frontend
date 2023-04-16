@@ -32,7 +32,7 @@
       },
       body: JSON.stringify({
         num_recipes: num_recipes,
-        iterations: 3,
+        iterations: 4,
       }),
     });
     const res = await req.json();

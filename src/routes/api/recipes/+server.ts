@@ -5,7 +5,7 @@ export const POST: RequestHandler = async ({ request }) => {
   try {
     const body: any = await request.json();
     const page = body.page;
-    const offset = page * 12;
+    const offset = page * 4;
 
     // console.log("page: " + page);
 
@@ -15,7 +15,7 @@ export const POST: RequestHandler = async ({ request }) => {
         FROM recipe
         ORDER by id ASC
         OFFSET $1
-        LIMIT 12
+        LIMIT 4
         `,
       [offset]
     );
