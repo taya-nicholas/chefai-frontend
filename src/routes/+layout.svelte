@@ -38,7 +38,7 @@
               >Recommendations</a
             >
           </li>
-          <li><a class="hover:underline" href="/cart">Cart</a></li>
+          <li><a class="hover:underline" href="/saved">Saved</a></li>
         </ul>
       </div>
       <a href="/" class="title btn btn-ghost normal-case text-sky-800 text-3xl"
@@ -58,7 +58,7 @@
         <li>
           <a class="hover:underline" href="/recommendations">Recommendations</a>
         </li>
-        <li><a class="hover:underline" href="/cart">Cart</a></li>
+        <li><a class="hover:underline" href="/saved">Saved</a></li>
       </ul>
     </div>
     <div class="navbar-end" />

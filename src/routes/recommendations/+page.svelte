@@ -90,8 +90,8 @@
         Our Recommendations machine simplifies meal planning by generating a
         wide range of diverse and delicious recipes. You no longer have to worry
         about selecting meals that are nutritious and balanced because we've got
-        you covered. Once you find recipes that you like, simply add them to
-        your cart to keep track of them.
+        you covered. Once you find recipes that you like, simply save them to
+        keep track of them.
       </p>
 
       <div class="flex flex-row space-x-5 max-w-2xl">
@@ -127,7 +127,7 @@
         {#if recipes}
           <button
             on:click={addAllToCart}
-            class="btn btn-md btn-accent mt-5 ml-2">Add all to cart</button
+            class="btn btn-md btn-accent mt-5 ml-2">Save all recipes</button
           >
           <div
             class="grid grid-cols-2 grid-flow-row pt-10 md:grid-cols-3 lg:grid-cols-4"

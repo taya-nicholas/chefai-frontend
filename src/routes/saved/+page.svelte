@@ -7,7 +7,6 @@
     cart_arr = cart_arr.split(",").map(Number);
   }
 
-
   export let data: PageData;
   $: recipes = data.recipes;
   $: recipes_cart = recipes.filter(
@@ -42,14 +41,14 @@
     <h1
       class="text-3xl text-zinc-800 font-medium m-1 pt-8 md:text-4xl lg:text-5xl ml-2"
     >
-      Cart
+      Saved
     </h1>
     <p
       class="text-base font-normal m-1 my-5 text-zinc-700 max-w-3xl pb-3 md:text-md lg:text-lg ml-2"
     >
-      Your selected recipes are safely stored in your cart for easy access
-      whenever you need them. You can modify them individually, or use the
-      "clear" button below to remove all meals for a fresh start.
+      Your saved recipes are safely stored here for easy access whenever you
+      need them. You can modify them individually, or use the "clear" button
+      below to remove all meals for a fresh start.
     </p>
     <button
       on:click={clearCart}

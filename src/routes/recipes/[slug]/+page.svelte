@@ -10,7 +10,6 @@
     cart_arr = cart_arr.split(",").map(Number);
   }
 
-
   export let data: PageData;
   $: recipe = data.recipe;
   $: ingredients = recipe.ingredients;
@@ -75,14 +74,15 @@
           </p>
           <p class="text-gray-700 m-10 text-xl italic">{recipe.description}</p>
           <button
-            class="btn btn-md lg:btn-lg mb-3 btn-ghost {( cart_arr && cart_arr.includes(
-              recipe.id
-            )
+            class="btn btn-md lg:btn-lg mb-3 btn-ghost {cart_arr &&
+            cart_arr.includes(recipe.id)
               ? 'bg-yellow-300 hover:bg-aqua'
-              : 'bg-aqua hover:bg-yellow-300')} outline outline-1 outline-black text-slate-800"
+              : 'bg-aqua hover:bg-yellow-300'} outline outline-1 outline-black text-slate-800"
             on:click={() => updateCart(recipe.id)}
           >
-            {( cart_arr && cart_arr.includes(recipe.id) ? "Remove from cart" : "Add to cart")}
+            {cart_arr && cart_arr.includes(recipe.id)
+              ? "Remove from saved"
+              : "Save"}
           </button>
         </div>
       </div>
