@@ -12,5 +12,5 @@ const cartItems = (browser && Cookies.get("cart")) || [];
 export const cart = writable(browser && cartItems);
 // cart.subscribe((val) => Cookies.set("cart", val));
 cart.subscribe(
-  (val) => browser && (Cookies.set("cart", val), { expires: 14, path: "" })
+  (val) => browser && (Cookies.set("cart", val), { expires: 365, path: "/" })
 );
