@@ -11,13 +11,9 @@
     <div
       class="col-span-1 dborder border-1 border-l-sky-900 border-b-sky-900 border-r-sky-900 bg-sky-900"
     >
-      <Image
+      <img
         class="w-full h-full"
-        width={1000}
-        height={1000}
-        quality={100}
-        eager={true}
-        src="https://chefai.s3.ap-southeast-2.amazonaws.com/images/robot.png"
+        src="/robot.png"
         alt="Robot chef making dinner"
       />
     </div>
