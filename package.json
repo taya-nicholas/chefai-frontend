@@ -26,6 +26,7 @@
 	"type": "module",
 	"dependencies": {
 		"@types/js-cookie": "^3.0.3",
+		"@vercel/analytics": "^1.0.0",
 		"aws-sdk": "^2.1353.0",
 		"daisyui": "^2.46.1",
 		"js-cookie": "^3.0.1",
