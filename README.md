@@ -7,8 +7,12 @@ The project's [backend](https://github.com/taya-nicholas/chefai-backend) is writ
 The frontend (this repo), created with SvelteKit, connects to AWS RDS and S3 to serve the data in a responsive UI styled with Tailwind CSS. The recommendations section uses an AWS Lambda function to make an API call. The website also leverages local storage to keep track of saved items in the cart.
 
 # Example
-
+### Recipes page
 ![Example of the website](/assets/website_sample.png)
+
+### Cooking assistant
+https://user-images.githubusercontent.com/80496709/236358353-65518973-8bd0-4caa-bd64-300e1e7e21b5.mp4
+
 
 # Running
 
