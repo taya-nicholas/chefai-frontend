@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { PageData } from "./$types";
   import Image from "sveltekit-image";
+  import Chat from "../../../components/chat.svelte";
 
   import { cart } from "../../../cart";
 
@@ -102,15 +103,22 @@
   </front>
 
   <main class="text-zinc-800 mx-auto max-w-screen-xl">
-    <h1 class="font-bold text-2xl p-3 md:text-4xl">Ingredients</h1>
-    <div class="p-3">
-      {#each ingredients as ing}
-        <p class="pl-1 text-md md:text-lg">
-          {ing.amount}
-          {ing.units}
-          {ing.name}
-        </p>
-      {/each}
+    <div class="flex flex-col md:grid md:grid-cols-3">
+      <div class="md:col-span-1">
+        <h1 class="font-bold text-2xl p-3 md:text-4xl">Ingredients</h1>
+        <div class="p-3">
+          {#each ingredients as ing}
+            <p class="pl-1 text-md md:text-lg">
+              {ing.amount}
+              {ing.units}
+              {ing.name}
+            </p>
+          {/each}
+        </div>
+      </div>
+      <div class="md:col-span-2 p-3">
+        <Chat {recipe} />
+      </div>
     </div>
 
     <h1 class="font-bold text-2xl p-3 md:text-4xl">Instructions</h1>
