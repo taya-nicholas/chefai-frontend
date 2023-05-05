@@ -44,9 +44,10 @@
           <li><a class="hover:underline" href="/saved">Saved</a></li>
         </ul>
       </div>
-      <a href="/" class="title btn btn-ghost normal-case text-sky-800 text-3xl"
-        >ChefAI</a
-      >
+      <a href="/" class="title btn btn-ghost normal-case text-sky-800 text-3xl">
+        <img class="h-8 pr-2" src="/logo.png" alt="chefai logo" />
+        <p>ChefAI</p>
+      </a>
     </div>
     <div
       class="navbar-center hidden md:flex text-sky-800 font-semibold text-lg"
