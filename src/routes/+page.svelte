@@ -34,10 +34,10 @@
         valuable time in the kitchen. All code is free and open source. Refer to
         the GitHub repo below.
 
-        <a href="https://github.com/taya-nicholas/chefai-backend">
+        <a href="https://github.com/taya-nicholas/chefai-frontend">
           <img
             alt="GitHub release (latest by date)"
-            src="https://img.shields.io/github/v/release/taya-nicholas/chefai-backend?style=social"
+            src="https://img.shields.io/github/v/release/taya-nicholas/chefai-frontend?style=social"
           />
         </a>
       </p>

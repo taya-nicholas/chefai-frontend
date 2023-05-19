@@ -1,17 +1,11 @@
 <script lang="ts">
   import type { PageData } from "./$types";
   import { cart } from "../../cart";
-  let cart_arr: any = $cart;
+  import InfiniteLoading from "svelte-infinite-loading";
 
-  if (typeof cart_arr === "string") {
-    cart_arr = cart_arr.split(",").map(Number);
-  }
-
-  export let data: PageData;
-  $: recipes = data.recipes;
-  $: recipes_cart = recipes.filter(
-    (recipe) => cart_arr && cart_arr.includes(recipe.id)
-  );
+  let cart_arr: number[] = Array.from($cart);
+  let page = 0;
+  let recipes: any[] = [];
 
   function clearCart() {
     $cart = [];
@@ -19,7 +13,7 @@
   }
 
   function updateCart(id: number) {
-    let items = cart_arr;
+    let items = $cart;
     const index = items.indexOf(id);
 
     if (index === -1) {
@@ -30,6 +24,29 @@
 
     $cart = items;
     cart_arr = Array.from($cart);
+  }
+
+  function infiniteHandler({ detail: { loaded, complete } }) {
+    fetch("/api/saved", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        page: page,
+        ids: cart_arr
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message.length) {
+          page += 1;
+          recipes = [...recipes, ...data.message];
+          loaded();
+        } else {
+          complete();
+        }
+      });
   }
 </script>
 
@@ -43,6 +60,7 @@
     >
       Saved
     </h1>
+    <p>{cart_arr}</p>
     <p
       class="text-base font-normal m-1 my-5 text-zinc-700 max-w-3xl pb-3 md:text-md lg:text-lg ml-2"
     >
@@ -58,7 +76,7 @@
     <div
       class="grid grid-cols-2 grid-flow-row pt-10 md:grid-cols-3 lg:grid-cols-4"
     >
-      {#each recipes_cart as recipe}
+    {#each recipes as recipe (recipe.id)}
         <div class="flex flex-col">
           <div class="flex space-x-3 justify-between no-underline mx-3">
             <p>
@@ -98,6 +116,7 @@
           </a>
         </div>
       {/each}
+      <InfiniteLoading on:infinite={infiniteHandler} />
     </div>
   </div>
 </div>
