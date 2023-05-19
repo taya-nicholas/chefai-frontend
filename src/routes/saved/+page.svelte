@@ -60,7 +60,6 @@
     >
       Saved
     </h1>
-    <p>{cart_arr}</p>
     <p
       class="text-base font-normal m-1 my-5 text-zinc-700 max-w-3xl pb-3 md:text-md lg:text-lg ml-2"
     >

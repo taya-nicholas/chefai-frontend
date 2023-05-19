@@ -97,7 +97,7 @@
                 {cart_arr.includes(recipe.id) ? "✓" : "+"}
               </button>
 
-              <label for={String(recipe.id) + "id"} class="hover:cursor-pointer"
+              <!-- <label for={String(recipe.id) + "id"} class="hover:cursor-pointer"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -143,7 +143,7 @@
                     {/each}
                   </div>
                 </label>
-              </label>
+              </label> -->
             </div>
           </div>
           <a

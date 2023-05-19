@@ -5,7 +5,7 @@ export const POST: RequestHandler = async ({ request }) => {
   try {
     const body: any = await request.json();
     const page = body.page;
-    const offset = page * 4;
+    const offset = page * 8;
 
     // console.log("page: " + page);
 
@@ -15,32 +15,32 @@ export const POST: RequestHandler = async ({ request }) => {
         FROM recipe
         ORDER by id ASC
         OFFSET $1
-        LIMIT 4
+        LIMIT 8
         `,
       [offset]
     );
 
-    for (const recipe of recipe_query.rows) {
-      const ingredients = await pool.query(
-        `
-          SELECT recipe_ingredients.amount, recipe_ingredients.units, ingredients.name
-          FROM recipe_ingredients
-          JOIN ingredients ON recipe_ingredients.ingredient_name = ingredients.name
-          WHERE recipe_ingredients.recipe_id = $1
-        `,
-        [recipe.id]
-      );
+    // for (const recipe of recipe_query.rows) {
+    //   const ingredients = await pool.query(
+    //     `
+    //       SELECT recipe_ingredients.amount, recipe_ingredients.units, ingredients.name
+    //       FROM recipe_ingredients
+    //       JOIN ingredients ON recipe_ingredients.ingredient_name = ingredients.name
+    //       WHERE recipe_ingredients.recipe_id = $1
+    //     `,
+    //     [recipe.id]
+    //   );
 
-      // Convert the ingredients to an array of objects
-      const ingredientsArray = ingredients.rows.map((ingredient) => ({
-        name: ingredient.name,
-        amount: ingredient.amount,
-        units: ingredient.units,
-      }));
+    //   // Convert the ingredients to an array of objects
+    //   const ingredientsArray = ingredients.rows.map((ingredient) => ({
+    //     name: ingredient.name,
+    //     amount: ingredient.amount,
+    //     units: ingredient.units,
+    //   }));
 
-      // Add the ingredients array to the recipe object
-      recipe.ingredients = ingredientsArray;
-    }
+    //   // Add the ingredients array to the recipe object
+    //   recipe.ingredients = ingredientsArray;
+    // }
 
     // console.log(recipe_query.rows);
 
