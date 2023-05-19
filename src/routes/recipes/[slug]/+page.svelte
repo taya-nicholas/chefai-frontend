@@ -7,9 +7,9 @@
 
   let cart_arr: any = $cart;
 
-  if (typeof cart_arr === "string") {
-    cart_arr = cart_arr.split(",").map(Number);
-  }
+  // if (typeof cart_arr === "string") {
+  //   cart_arr = cart_arr.split(",").map(Number);
+  // }
 
   export let data: PageData;
   $: recipe = data.recipe;
